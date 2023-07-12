@@ -14,10 +14,12 @@ function NavBarComponent() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand style={{ color: '#000000' }}>
-          <Link to="/"><strong>SAMDEPAUL</strong></Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <div className="d-flex align-items-center">
+          <Navbar.Brand style={{ color: '#000000' }}>
+            <Link to="/"><strong>SAMDEPAUL</strong></Link>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="ml-auto order-lg-0" />
+        </div>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/" exact>
