@@ -1,0 +1,160 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  .btn{
+    margin: 2px;;
+  }
+  .divbtn{
+    float: left;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .about-me {
+    margin-top: 50px;
+  }
+  
+  .about-heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 460px;
+  }
+  
+  .about-text {
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .profile-picture {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+.jumbotron {
+  text-align: center;
+  background-color: #343a40; /* Warna latar belakang abu-abu */
+  padding: 50px;
+  margin-bottom: 0;
+  }
+  
+  .display-4 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #138496;
+  }
+  
+  .by {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    color:#fff
+  }
+  
+  .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+  
+  .btn-info:hover {
+    background-color: #138496;
+    border-color: #138496;
+  }
+  
+  footer {
+  background-color: #343a40;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.text-center a:hover {
+  color: #17a2b8;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.coverlogin {
+  background-color: white;
+  width: 70%;
+  height: 50%;
+  border-radius: 1em;
+  box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 10%;
+  max-width: 500px; /* Maksimum lebar kotak */
+  padding: 1rem;
+  text-align: center; /* Agar teks berada di tengah pada konten */
+}
+
+@media (max-width: 768px) {
+  .coverlogin {
+    width: 90%; /* Mengubah lebar kotak saat tampilan responsif */
+    margin-top: 5%; /* Mengurangi jarak dari bagian atas halaman saat tampilan responsif */
+  }
+}
+
+.coverlogin h2 {
+  font-size: 2rem; /* Ukuran font besar */
+  font-weight: bold; /* Tulisan tebal */
+  margin-bottom: 1rem; /* Jarak bawah antara h1 dan komponen lainnya */
+}
