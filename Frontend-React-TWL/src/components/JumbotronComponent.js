@@ -17,6 +17,7 @@ const JumbotronComponent = (props) => {
             SAMDEPAUL
           </Button>
         </p>
+        <p className="JumText">This website is used to fulfill the final assignment for the Teknologi Web Lanjut course</p>
       </Jumbotron>
     </div>
   );
