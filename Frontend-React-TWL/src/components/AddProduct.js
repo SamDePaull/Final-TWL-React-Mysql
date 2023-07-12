@@ -3,28 +3,33 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
+  // State untuk menyimpan nilai judul, file, dan tampilan pratinjau gambar
   const [title, setTitle] = useState("");
   const [file, setFile] = useState("");
   const [preview, setPreview] = useState("");
   const navigate = useNavigate();
 
+  // Fungsi untuk memuat gambar dan menyimpannya di state
   const loadImage = (e) => {
     const image = e.target.files[0];
     setFile(image);
     setPreview(URL.createObjectURL(image));
   };
 
+  // Fungsi untuk menyimpan produk baru
   const saveProduct = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
     formData.append("title", title);
     try {
+      // Mengirim data produk ke server menggunakan axios dengan metode POST
       await axios.post("http://localhost:5000/products", formData, {
         headers: {
           "Content-type": "multipart/form-data",
         },
       });
+      // Navigasi ke halaman utama setelah penyimpanan berhasil
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -66,6 +71,7 @@ const AddProduct = () => {
             </div>
           </div>
 
+          {/* Menampilkan pratinjau gambar jika ada */}
           {preview ? (
             <figure className="image is-128x128">
               <img src={preview} alt="Preview Image" />

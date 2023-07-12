@@ -8,17 +8,20 @@ function LoginPage() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    // Mengatur nilai username saat perubahan pada input
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
     };
 
+    // Mengatur nilai password saat perubahan pada input
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     };
 
+    // Meng-handle proses login
     const handleLogin = () => {
         if (!username || !password) {
-            setError("Username and password are required");
+            setError("Username and password are required"); // Menampilkan pesan error jika username atau password kosong
             return;
         }
 
@@ -28,12 +31,12 @@ function LoginPage() {
                 password: password,
             })
             .then((response) => {
-                localStorage.setItem("token", response.data.token);
-                alert("Login successful");
+                localStorage.setItem("token", response.data.token); // Menyimpan token yang diterima dari server ke dalam local storage
+                alert("Login successful"); // Menampilkan notifikasi login berhasil
                 window.location.reload(); // Memuat ulang halaman setelah login berhasil
             })
             .catch((error) => {
-                setError("Login failed. Please check your username and password.");
+                setError("Login failed. Please check your username and password."); // Menampilkan pesan error jika login gagal
                 console.error(error);
             });
     };
@@ -41,7 +44,8 @@ function LoginPage() {
     return (
         <div className="coverlogin">
             <h2>Login</h2>
-            {error && <Alert variant="danger">{error}</Alert>}
+            {error && <Alert variant="danger">{error}</Alert>} 
+
             <Form>
                 <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>

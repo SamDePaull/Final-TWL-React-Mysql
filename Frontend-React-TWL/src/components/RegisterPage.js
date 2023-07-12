@@ -7,14 +7,17 @@ function RegisterPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    // Mengatur nilai username saat perubahan pada input
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
     };
 
+    // Mengatur nilai password saat perubahan pada input
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     };
 
+    // Meng-handle proses registrasi
     const handleRegister = () => {
         axios
             .post("http://localhost:5000/register", {
@@ -22,14 +25,14 @@ function RegisterPage() {
                 password: password,
             })
             .then((response) => {
-                // Handle registration success
-                alert("Registration successful");
-                // Redirect to login page
+                // Menangani registrasi sukses
+                alert("Registration successful"); // Menampilkan notifikasi registrasi berhasil
+                // Redirect ke halaman login
                 window.location.assign("/login");
             })
             .catch((error) => {
-                // Handle registration failure
-                alert("Registration failed");
+                // Menangani registrasi gagal
+                alert("Registration failed"); // Menampilkan notifikasi registrasi gagal
                 console.error(error);
             });
     };
