@@ -99,6 +99,16 @@
   margin-top: 20px;
 }
 
+.JumTextQotd {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  color: #0f0e0e;
+  margin-top: 20px;
+  font-style: italic; /* Membuat teks miring */
+}
+
+
   .btn-info {
     background-color: #17a2b8;
     border-color: #17a2b8;

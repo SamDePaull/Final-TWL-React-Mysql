@@ -18,6 +18,8 @@ const JumbotronComponent = (props) => {
           </Button>
         </p>
         <p className="JumText">This website is used to fulfill the final assignment for the Teknologi Web Lanjut course</p>
+        <p className="JumText" bold>Qoute of The Day</p>
+        <p className="JumTextQotd">"The best way to predict the future is to create it"</p>
       </Jumbotron>
     </div>
   );
