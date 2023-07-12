@@ -15,7 +15,7 @@ function NavBarComponent() {
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand style={{ color: '#000000' }}>
-          <Link to="/">SAMDEPAUL</Link>
+          <Link to="/"><strong>SAMDEPAUL</strong></Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
