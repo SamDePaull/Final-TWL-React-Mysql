@@ -52,7 +52,6 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-left: 460px;
   }
   
   .about-text {
@@ -108,7 +107,7 @@
   }
   
   .btn btn-success {
-    background-color: #000000;
+    background-color: #28a745;
     border-color: #28a745;
   }
 
