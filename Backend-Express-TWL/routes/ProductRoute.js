@@ -11,10 +11,13 @@ import {
     login
 } from "../controllers/UserController.js";
 
+import { authMiddleware 
+}  from "../middleware/AuthMiddleware.js";
+
 const router = express.Router();
 
 // Mendapatkan semua produk
-router.get('/products', getProducts);
+router.get('/products',authMiddleware, getProducts);
 
 // Mendapatkan produk berdasarkan ID
 router.get('/products/:id', getProductById);

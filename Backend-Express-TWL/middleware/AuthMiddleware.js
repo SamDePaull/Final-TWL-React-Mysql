@@ -1,29 +1,21 @@
 import jwt from 'jsonwebtoken';
-import config from '../config/config.js';
-import User from '../models/UserModel.js';
+import config from '../config/config.cjs';
 
 // Middleware untuk verifikasi token JWT
-const authMiddleware = async (req, res, next) => {
-    const token = req.header('Authorization');
-
-    if (!token) {
-        return res.status(401).json({ message: 'No token, authorization denied' });
-    }
-
+export const authMiddleware = async (req, res, next) => {
     try {
-        const decoded = jwt.verify(token, config.jwtSecretKey);
-        const user = await User.findOne({ where: { id: decoded.id } });
+        const token = req.headers.authorization.split(' ')[1]; // Extract token from the Authorization header
+        const decoded = jwt.verify(token, config.jwtSecretKey); // Verify the token using the secret key
 
-        if (!user) {
-            return res.status(401).json({ message: 'Invalid token' });
-        }
+        // Attach the decoded token to the request object
+        req.user = decoded.user;
 
-        req.user = user;
-        next();
+        next(); // Move to the next middleware
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: 'Token verification failed' });
+        console.error(error);
+        return res.status(401).json({ error: 'Invalid token' });
     }
 };
 
-export default authMiddleware;
+
+// export default { authMiddleware };
