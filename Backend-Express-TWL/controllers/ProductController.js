@@ -2,27 +2,29 @@ import Product from "../models/ProductModel.js";
 import path from "path";
 import fs from "fs";
 
-export const getProducts = async(req, res) => {
+export const getProducts = async (req, res) => {
     try {
-        const response = await Product.findAll();
-        res.json(response);
+        const response = await Product.findAll(); // Mengambil semua produk dari database
+        res.json(response); // Mengirimkan respon JSON yang berisi daftar produk
     } catch (error) {
-        console.log(error.message);
+        console.log(error.message); // Menampilkan pesan error jika terjadi kesalahan
     }
 }
 
-export const getProductById = async(req, res) => {
+
+export const getProductById = async (req, res) => {
     try {
         const response = await Product.findOne({
             where: {
                 id: req.params.id
             }
         });
-        res.json(response);
+        res.json(response); // Mengirimkan respon JSON yang berisi produk yang sesuai dengan ID yang diberikan
     } catch (error) {
-        console.log(error.message);
+        console.log(error.message); // Menampilkan pesan error jika terjadi kesalahan
     }
 }
+
 
 export const saveProduct = (req, res) => {
     // Validasi apakah ada file yang diunggah
@@ -41,7 +43,7 @@ export const saveProduct = (req, res) => {
     if (fileSize > 5000000) return res.status(422).json({ msg: "Image must be less than 5 MB" });
 
     // Pindahkan file ke direktori "public/images" dan simpan entri produk baru dalam database
-    file.mv(`./public/images/${fileName}`, async(err) => {
+    file.mv(`./public/images/${fileName}`, async (err) => {
         if (err) return res.status(500).json({ msg: err.message });
         try {
             await Product.create({ name: name, image: fileName, url: url });
@@ -52,7 +54,7 @@ export const saveProduct = (req, res) => {
     })
 }
 
-export const updateProduct = async(req, res) => {
+export const updateProduct = async (req, res) => {
     // Temukan produk berdasarkan ID yang diberikan dalam parameter
     const product = await Product.findOne({
         where: {
@@ -102,7 +104,7 @@ export const updateProduct = async(req, res) => {
     }
 }
 
-export const deleteProduct = async(req, res) => {
+export const deleteProduct = async (req, res) => {
     // Temukan produk berdasarkan ID yang diberikan dalam parameter
     const product = await Product.findOne({
         where: {

@@ -11,25 +11,23 @@ import {
     login
 } from "../controllers/UserController.js";
 
-import { authMiddleware 
-}  from "../middleware/AuthMiddleware.js";
 
 const router = express.Router();
 
 // Mendapatkan semua produk
-router.get('/products',authMiddleware, getProducts);
+router.get('/products', getProducts);
 
 // Mendapatkan produk berdasarkan ID
-router.get('/products/:id',authMiddleware, getProductById);
+router.get('/products/:id', getProductById);
 
 // Menyimpan produk baru
-router.post('/products',authMiddleware, saveProduct);
+router.post('/products', saveProduct);
 
 // Memperbarui produk berdasarkan ID
-router.patch('/products/:id',authMiddleware, updateProduct);
+router.patch('/products/:id', updateProduct);
 
 // Menghapus produk berdasarkan ID
-router.delete('/products/:id',authMiddleware, deleteProduct);
+router.delete('/products/:id', deleteProduct);
 
 // Registrasi pengguna baru
 router.post('/register', register);
