@@ -1,5 +1,6 @@
 module.exports = {
     jwtSecretKey: 'secret-key',
+
     database: {
         host: 'localhost',
         username: 'root',
